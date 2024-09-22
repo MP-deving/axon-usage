@@ -24,12 +24,9 @@ dependencies {
 
     // Dependências do Axon Framework
     implementation("org.axonframework:axon-spring-boot-starter:4.9.4")
-    // Remova dependências redundantes ou de versões diferentes
-    // implementation("org.axonframework:axon-spring-boot-autoconfigure:4.9.4")
-    // implementation("org.axonframework:axon-spring:4.9.4")
-    // implementation("org.axonframework:axon-eventsourcing:4.9.4")
-    // implementation("org.axonframework:axon-modelling:4.9.4")
-    // implementation("org.axonframework:axon-messaging:4.9.4")
+
+    //Dependências do Postgres
+    implementation("org.postgresql:postgresql:42.7.3")
 
     // Dependências do Kotlin
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -59,5 +56,5 @@ tasks.withType<Test> {
 }
 
 application {
-    mainClass.set("com.example.axon.ApplicationKt") // Atualize para o nome completo da classe principal
+mainClass.set("com.example.axon.ApplicationKt")
 }

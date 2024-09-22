@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/axon
+    username: postgres
+    password: 65068600
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+axon:
+  axonserver:
+    enabled: false
