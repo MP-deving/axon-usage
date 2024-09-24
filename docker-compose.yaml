@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USERNAME: compose
+      POSTGRES_PASSWORD: 65068600
+    ports:
+      - "5432:5432"
