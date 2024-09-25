@@ -6,6 +6,7 @@ plugins {
     kotlin("plugin.jpa") version "1.9.25"
     id("org.springframework.boot") version "3.3.4"
     id("io.spring.dependency-management") version "1.1.6"
+    id("org.flywaydb.flyway") version "10.18.1"
     application
 }
 
@@ -28,6 +29,8 @@ dependencies {
 
     //Dependências do Postgres
     implementation("org.postgresql:postgresql:42.7.3")
+    implementation("org.flywaydb:flyway-core:10.18.0")
+    implementation("org.flywaydb:flyway-database-postgresql")
 
     // Dependências do Kotlin
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
