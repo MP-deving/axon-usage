@@ -8,6 +8,16 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+
+  flyway:
+#    user: postgres
+#    password: 65068600
+#    schemas:
+#      - axon-usage
+    enabled: true
+#    locations: classpath:migrations
+    baseline-on-migrate: true
+
 axon:
   axonserver:
     enabled: false
