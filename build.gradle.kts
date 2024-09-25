@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.8.0"
     kotlin("plugin.spring") version "1.9.25"
+    kotlin("plugin.jpa") version "1.9.25"
     id("org.springframework.boot") version "3.3.4"
     id("io.spring.dependency-management") version "1.1.6"
     application
@@ -35,6 +36,7 @@ dependencies {
 
     // Banco de dados H2 em memória
     runtimeOnly("com.h2database:h2")
+    runtimeOnly("org.postgresql:postgresql")
 }
 
 tasks.test {
