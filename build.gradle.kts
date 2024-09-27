@@ -23,12 +23,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-
-    // Dependências do Axon Framework
     implementation("org.axonframework:axon-spring-boot-starter:4.9.4")
 
-    //Dependências do Postgres
-    implementation("org.postgresql:postgresql:42.7.3")
+    // Dependências do db
+    runtimeOnly("org.postgresql:postgresql:42.7.3")
     implementation("org.flywaydb:flyway-core:10.18.0")
     implementation("org.flywaydb:flyway-database-postgresql")
 
@@ -37,9 +35,11 @@ dependencies {
     implementation(kotlin("reflect"))
     implementation(kotlin("stdlib"))
 
-    // Banco de dados H2 em memória
-    runtimeOnly("com.h2database:h2")
-    runtimeOnly("org.postgresql:postgresql")
+    implementation("org.springframework.boot:spring-boot-starter-security")
+
+    implementation("io.jsonwebtoken:jjwt-api:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
 }
 
 tasks.test {
@@ -61,5 +61,5 @@ tasks.withType<Test> {
 }
 
 application {
-mainClass.set("com.example.axon.ApplicationKt")
+    mainClass.set("com.example.axon.ApplicationKt")
 }
