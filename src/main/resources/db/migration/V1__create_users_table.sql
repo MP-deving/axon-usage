@@ -1,5 +1,8 @@
-CREATE TABLE users (
-id varchar(40) NULL,
-name varchar(40) NULL,
-username varchar(40) NULL
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS users (
+id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+name VARCHAR (100) NOT NULL,
+username VARCHAR (100) UNIQUE NOT NULL,
+password VARCHAR(255) NOT NULL
 );
