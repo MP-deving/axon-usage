@@ -1,12 +1,11 @@
 package com.example.axon.infrastructure.entities
 
 import jakarta.persistence.*
-import org.hibernate.annotations.GenericGenerator
 import java.util.*
 
 @Entity
 @Table(name = "users")
-data class User(
+data class UserEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "UUID", updatable = false, nullable = false)
@@ -27,5 +26,5 @@ data class User(
         joinColumns = [JoinColumn(name = "user_id")],
         inverseJoinColumns = [JoinColumn(name = "anim_id")]
     )
-    val favoriteAnimes: MutableSet<Anime> = mutableSetOf(),
+    val favoriteAnimes: MutableSet<AnimeEntity> = mutableSetOf()
 )
