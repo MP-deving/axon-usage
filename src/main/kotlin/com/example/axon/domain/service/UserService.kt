@@ -1,7 +1,7 @@
 package com.example.axon.domain.service
 
+import com.example.axon.domain.mappers.UserMapper
 import com.example.axon.domain.models.UserModel
-import com.example.axon.infrastructure.entities.UserEntity
 import com.example.axon.infrastructure.repository.UserRepository
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
@@ -12,13 +12,20 @@ class UserService(
     private val userRepository: UserRepository,
     private val passwordEncoder: PasswordEncoder
 ) {
-    fun create(user: UserModel): UserEntity {
+    fun create(user: UserModel): UserModel {
         val encryptedPassword = passwordEncoder.encode(user.password)
-        val user = UserEntity(
+        val user = UserModel(
             id = UUID.randomUUID(),
             name = user.name,
             username = user.username,
-            password = encryptedPassword)
-        return userRepository.save(user)
+            password = encryptedPassword
+        )
+        return UserMapper.INSTANCE.userModelFromUserEntity(
+            userRepository.save(
+                UserMapper.INSTANCE.userModelToUserEntity(
+                    user
+                )
+            )
+        )
     }
 }
