@@ -1,6 +1,6 @@
 package com.example.axon.web.controllers
 
-import com.example.axon.commands.CreateAccountCommand
+import com.example.axon.application.commands.CreateAccountCommand
 import org.axonframework.commandhandling.gateway.CommandGateway
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*

@@ -24,6 +24,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.axonframework:axon-spring-boot-starter:4.9.4")
+    implementation("org.springframework.boot:spring-boot-starter-security")
 
     // Dependências do db
     runtimeOnly("org.postgresql:postgresql:42.7.3")
@@ -35,7 +36,8 @@ dependencies {
     implementation(kotlin("reflect"))
     implementation(kotlin("stdlib"))
 
-    implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.mapstruct:mapstruct:1.6.2")
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.6.2")
 
     implementation("io.jsonwebtoken:jjwt-api:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
